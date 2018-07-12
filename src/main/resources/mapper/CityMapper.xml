@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.csbug.ancestor.dao.CityDao">
+
+	<select id="findByName" resultType="com.csbug.ancestor.entity.City" parameterType="java.lang.String">
+		SELECT
+			c_city_id AS cityId
+		FROM
+			t_city
+		WHERE
+			c_city_name = #{cityName}
+	</select>
+
+	<select id="findId" resultType="com.csbug.ancestor.entity.City" parameterType="java.lang.Integer">
+		SELECT
+			c_city_id AS cityId
+		FROM
+			t_city
+		WHERE
+			c_id = #{id}
+	</select>
+
+</mapper>
